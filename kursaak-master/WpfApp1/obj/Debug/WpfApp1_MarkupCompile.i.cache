@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Макс\Desktop\kursaak-master\WpfApp1\obj\Debug\
+C:\Game\kursaak\kursaak-master\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-C:\Users\Макс\Desktop\kursaak-master\WpfApp1\App.xaml
+C:\Game\kursaak\kursaak-master\WpfApp1\App.xaml
 4-1018316538
 21750853300
 35783188600
-18-405090812
+18-50190234
 MainWindow.xaml;windows\OpenService.xaml;windows\ShowUser.xaml;windows\UserWindows.xaml;
 
-True
+False
 

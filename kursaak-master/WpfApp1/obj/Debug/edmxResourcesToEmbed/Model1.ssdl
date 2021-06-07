@@ -21,7 +21,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -31,7 +31,7 @@
     <Property Name="Phone" Type="float" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Balance" Type="money" Nullable="false" />
-    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
     <Property Name="Photo" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Naryad">

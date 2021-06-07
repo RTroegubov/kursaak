@@ -7,7 +7,7 @@
       <Diagram DiagramId="ae0e5fa13a474a91911c633820399a0a" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="inetprovider_kpModel.Admin" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="inetprovider_kpModel.CallCenter" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="inetprovider_kpModel.Client" Width="1.5" PointX="6.5" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inetprovider_kpModel.Client" Width="1.5" PointX="12.375" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="inetprovider_kpModel.Naryad" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="inetprovider_kpModel.NaryadService" Width="1.5" PointX="8" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="inetprovider_kpModel.Order" Width="1.5" PointX="8.75" PointY="25.25" IsExpanded="true" />
@@ -31,7 +31,7 @@
         <AssociationConnector Association="inetprovider_kpModel.FK_CallCenter_StatusType" ManuallyRouted="false" />
         <AssociationConnector Association="inetprovider_kpModel.FK_CallCenter_Workers" ManuallyRouted="false" />
         <AssociationConnector Association="inetprovider_kpModel.FK_Rate_CallCenter" ManuallyRouted="false" />
-        <AssociationConnector Association="inetprovider_kpModel.FK_Order_Client" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="inetprovider_kpModel.FK_Order_Client" />
         <AssociationConnector Association="inetprovider_kpModel.FK_NaryadService_Naryad" ManuallyRouted="false" />
         <AssociationConnector Association="inetprovider_kpModel.FK_OrderService_Order" ManuallyRouted="false" />
         <AssociationConnector Association="inetprovider_kpModel.FK_OrderService_Service" ManuallyRouted="false" />

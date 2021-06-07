@@ -26,7 +26,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -36,7 +36,7 @@
           <Property Name="Phone" Type="float" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Balance" Type="money" Nullable="false" />
-          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
           <Property Name="Photo" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Naryad">
@@ -603,8 +603,8 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Client" FromRole="Client" ToRole="Order" />
-          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Naryad">
           <Key>
@@ -633,7 +633,7 @@
           <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TimeStart" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TimeEnd" Type="DateTime" Precision="0" />
-          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="ClientId" Nullable="false" Type="Int32" />
           <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="OrderService" Relationship="Self.FK_OrderService_Order" FromRole="Order" ToRole="OrderService" />
         </EntityType>
@@ -870,8 +870,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="Self.Client" Multiplicity="1" Role="Client" />
+          <End Type="Self.Order" Multiplicity="*" Role="Order" />
           <ReferentialConstraint>
             <Principal Role="Client">
               <PropertyRef Name="Id" />
@@ -1101,8 +1101,8 @@
             <End Role="Rate" EntitySet="Rate" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="Order" EntitySet="Order" />
+            <End EntitySet="Client" Role="Client" />
+            <End EntitySet="Order" Role="Order" />
           </AssociationSet>
           <AssociationSet Name="FK_NaryadService_Naryad" Association="Self.FK_NaryadService_Naryad">
             <End Role="Service" EntitySet="Service" />
@@ -1193,8 +1193,8 @@
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="inetprovider_kpModel.Client">
               <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />

@@ -232,6 +232,7 @@ namespace WpfApp1.windows
 
             // перечитываем изменившийся список, не забывая в сеттере вызвать PropertyChanged
             UserService = Core.DB.Client.ToList();
+            PropertyChanged(this, new PropertyChangedEventArgs("UserService"));
         }
         
         private void EditButton_Click(object sender, RoutedEventArgs e)
